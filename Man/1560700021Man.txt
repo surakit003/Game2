@@ -1,0 +1,25 @@
+using UnityEngine;
+using System.Collections;
+
+public class Player : MonoBehaviour {
+
+	public float pulo
+	private  bool apertou = false;
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetButtonDown ("Jump") || Input.GetMouseButtonDown (0)) {
+			apertou = true;
+		} else
+			apertou = false;
+	}
+	void FixedUpdate(){
+		if (apertou) {
+			Rigidbody2D.veclocity = new Vector2(0,pulo);
+		}
+	}	
+}
